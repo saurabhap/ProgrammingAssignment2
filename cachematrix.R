@@ -9,14 +9,14 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         inverse <- NULL
-         setm<- function(y){
+         set<- function(y){
                  x <<- y
                  inverse <<- NULL
          }
-        getm <- function() x
-        setinv <- function(inv) inverse <- inv
-        getinv <- function() inverse
-        list(set= setm, get= getm, setinverse= setinv, getinverse= getinv)
+        get <- function() x
+        setinverse <- function(inv) inverse <<- inv
+        getinverse <- function() inverse
+        list(set= set, get= get, setinverse= setinverse, getinverse= getinverse)
 }
 
 ## The cacheSolve function returns the inverse of the special matrix object inside the makeCache function.
